@@ -207,7 +207,21 @@ Restart Codex, open the plugin directory, and install `swift-agent-skills`. Skil
 git clone https://github.com/SameTrouble/Swift-Agent-Skills ~/.codex/plugins/swift-agent-skills
 ```
 
-Then add a personal marketplace entry at `~/.agents/plugins/marketplace.json` pointing at `./.codex/plugins/swift-agent-skills`.
+Then add a personal marketplace entry at `~/.agents/plugins/marketplace.json`:
+
+```json
+{
+  "name": "swift-agent-skills",
+  "plugins": [
+    {
+      "name": "swift-agent-skills",
+      "source": { "source": "local", "path": "~/.codex/plugins/swift-agent-skills" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
+```
 
 ### OpenCode
 
@@ -231,13 +245,13 @@ Restart OpenCode, then use the `skill` tool to list or load any bundled skill (e
 
 **Alternative install methods:**
 
-Local clone (auto-discovery):
+**Local clone (auto-discovery):**
 
 ```bash
 git clone https://github.com/SameTrouble/Swift-Agent-Skills ~/.config/opencode/plugins/Swift-Agent-Skills
 ```
 
-Static skills only (no plugin code):
+**Static skills only (no plugin code):**
 
 ```json
 {
