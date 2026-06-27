@@ -5,7 +5,12 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CATALOG="$SCRIPT_DIR/catalog.json"
-SKILLS_DIR="$SCRIPT_DIR/../skills"
+SKILLS_DIR="$SCRIPT_DIR/../plugins/en/skills"
+# Safety: ensure sync never writes outside the English plugin directory.
+if [[ "$SKILLS_DIR" != */plugins/en/skills ]]; then
+  echo "ERROR: SKILLS_DIR must end with /plugins/en/skills (got: $SKILLS_DIR)" >&2
+  exit 1
+fi
 
 # Resolve repo basename for clone dir naming.
 repo_basename() {
