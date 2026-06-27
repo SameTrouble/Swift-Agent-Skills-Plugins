@@ -220,7 +220,7 @@ codex plugin marketplace add SameTrouble/Swift-Agent-Skills
 > ⚠️ **English and Chinese versions are mutually exclusive.** Do not install both — skill names collide. Pick one.
 > ⚠️ **中文版与英文版互斥。** 请勿同时安装——技能名相同会冲突。二选一。
 
-This repository is packaged as a plugin for Claude Code, Codex, and OpenCode. All three read the same bundled Swift skills from `skills/`.
+This repository is packaged as a plugin for Claude Code, Codex, and OpenCode. Each language version bundles its Swift skills from its own `skills/` directory under `plugins/en/` or `plugins/zh/`.
 
 ### Claude Code
 
@@ -319,13 +319,13 @@ git clone https://github.com/SameTrouble/Swift-Agent-Skills ~/.config/opencode/p
 
 ### Syncing skills (maintainers)
 
-Vendored skills live under `skills/<name>/`. To refresh from upstream repos:
+Vendored skills live under `plugins/en/skills/<name>/`. To refresh from upstream repos:
 
 ```bash
 ./scripts/sync.sh
 ```
 
-This reads `scripts/catalog.json`, re-clones each upstream, and copies skill files into `skills/`. Review `git diff` before committing.
+This reads `scripts/catalog.json`, re-clones each upstream, and copies skill files into `plugins/en/skills/`. Review `git diff` before committing.
 
 
 ## License
