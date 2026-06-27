@@ -1,0 +1,8 @@
+{
+  "name": "swift-agent-skills-zh",
+  "version": "0.2.0",
+  "description": "精选 Swift 与 Apple 平台代理技能（中文版）",
+  "type": "module",
+  "main": "swift-skills.ts",
+  "license": "MIT"
+}

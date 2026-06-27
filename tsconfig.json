@@ -9,5 +9,5 @@
     "allowImportingTsExtensions": true,
     "types": ["@opencode-ai/plugin", "node"]
   },
-  "include": [".opencode/plugins/**/*.ts"]
+  "include": ["plugins/*/swift-skills.ts"]
 }

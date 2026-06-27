@@ -1,0 +1,8 @@
+{
+  "name": "swift-agent-skills-en",
+  "version": "0.2.0",
+  "description": "Curated Swift and Apple platform agent skills for opencode (English)",
+  "type": "module",
+  "main": "swift-skills.ts",
+  "license": "MIT"
+}
