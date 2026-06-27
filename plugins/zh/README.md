@@ -1,14 +1,44 @@
 # Swift Agent Skills（中文版）
 
-本目录是 Swift-Agent-Skills 的中文插件包。技能内容由维护者手动翻译，按需从英文版同步并翻译。
+本目录是 Swift-Agent-Skills 的中文插件包，包含全部 31 个技能的中文译文。技能内容随英文版同步更新并翻译。
 
 ## 中文技能清单
 
 | 技能名 | 分类 | 状态 | 上游同步版本 |
 |--------|------|------|-------------|
-| _(暂无已翻译技能)_ | | | |
+| swiftui-pro | SwiftUI | 已翻译 | 1.1 |
+| swiftui-ui-patterns | SwiftUI | 已翻译 | — |
+| swiftui-design-principles | SwiftUI | 已翻译 | 1.1.1 |
+| swiftui-view-refactor | SwiftUI | 已翻译 | — |
+| swiftui-performance-audit | 性能 | 已翻译 | — |
+| swiftdata-pro | SwiftData | 已翻译 | 1.0 |
+| swiftdata-expert | SwiftData | 已翻译 | — |
+| swift-concurrency-pro | 并发 | 已翻译 | 1.0 |
+| swift-concurrency-expert | 并发 | 已翻译 | — |
+| swift-concurrency-expert-dimillian | 并发 | 已翻译 | — |
+| swift-testing-pro | 测试 | 已翻译 | 1.0 |
+| swift-testing-agent-skill | 测试 | 已翻译 | — |
+| swift-testing-expert | 测试 | 已翻译 | — |
+| swift-api-design-guidelines | 语言 | 已翻译 | — |
+| swift-formatstyle | 语言 | 已翻译 | 1.0 |
+| swift-accessibility | 无障碍 | 已翻译 | — |
+| ios-accessibility | 无障碍 | 已翻译 | — |
+| apple-accessibility | 无障碍 | 已翻译 | 1.3.0 |
+| app-intents | App Intents | 已翻译 | 1.2.0 |
+| app-store-connect-cli | App Store | 已翻译 | — |
+| app-store-changelog | App Store | 已翻译 | — |
+| app-store-aso-optimization | App Store | 已翻译 | — |
+| app-store-review | App Store | 已翻译 | 1.1.0 |
+| swift-architecture | 架构 | 已翻译 | — |
+| core-data-expert | Core Data | 已翻译 | — |
+| swift-focusengine-pro | 焦点 | 已翻译 | 1.7.1 |
+| swift-security-expert | 安全 | 已翻译 | — |
+| ios-code-audit | 审计 | 已翻译 | — |
+| ios-simulator | 工具 | 已翻译 | 1.5.0 |
+| figma-to-swiftui | 工具 | 已翻译 | — |
+| writing-for-interfaces | 界面文案 | 已翻译 | — |
 
-> 翻译完成后，请在此表格登记。
+> 全部 31 个技能已翻译完成。新增或同步翻译后，请在此表格登记。
 
 ## 翻译流程
 
