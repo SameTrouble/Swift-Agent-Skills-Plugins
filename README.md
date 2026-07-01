@@ -192,18 +192,15 @@ Claude Code auto-discovers the `.claude-plugin/plugin.json` manifest and registe
 
 ### Codex
 
-Codex natively discovers `SKILL.md` files. Add this repository as a marketplace in `~/.codex/config.toml`:
+Codex discovers skills via `.codex-plugin/plugin.json` and the marketplace manifest at `.agents/plugins/marketplace.json`.
 
-**Option A — Marketplace (recommended):**
+**Option A — Marketplace install (recommended):**
 
-```toml
-[marketplaces.swift-agent-skills]
-source_type = "git"
-source = "https://github.com/SameTrouble/Swift-Agent-Skills.git"
-ref = "main"
+```
+codex plugin marketplace add SameTrouble/Swift-Agent-Skills
 ```
 
-Then install the plugin via Codex's plugin install command. Skills load at user scope.
+Then install the plugin via Codex's `/plugins` command or sidebar. Skills load from `dist/skills/` at user scope.
 
 **Option B — Drop-in (per-skill path):**
 
@@ -217,35 +214,30 @@ enabled = true
 
 ### OpenCode
 
-OpenCode discovers skills via `skills.paths` in your `opencode.json`.
+OpenCode discovers skills via the `package.json` (`pi.skills` field) and the JS plugin at `.opencode/plugins/swift-agent-skills.js`, which auto-registers `dist/skills/` to `config.skills.paths`.
 
-**Option A — Global config:**
+**Option A — Plugin install (recommended):**
 
-```json
-{
-  "skills": { "paths": ["~/.config/opencode/plugins/Swift-Agent-Skills/dist/skills"] }
-}
-```
-
-**Option B — Project-level config:**
+Add the git URL to the `plugin` array in your `opencode.json` (global at `~/.config/opencode/opencode.json` or project-level):
 
 ```json
 {
-  "skills": { "paths": ["./Swift-Agent-Skills/dist/skills"] }
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["https://github.com/SameTrouble/Swift-Agent-Skills"]
 }
 ```
 
-**Option C — Git clone:**
+**Option B — Git clone (local):**
 
 ```bash
-git clone https://github.com/SameTrouble/Swift-Agent-Skills ~/.config/opencode/plugins/Swift-Agent-Skills
+git clone https://github.com/SameTrouble/Swift-Agent-Skills ~/.config/opencode/plugins/swift-agent-skills
 ```
 
-Then reference `dist/skills` in your `skills.paths` as shown above.
+Local plugins in `~/.config/opencode/plugins/` are auto-discovered — no config entry needed. The JS plugin automatically registers `dist/skills/` on startup.
 
 #### Migrating from the old opencode plugin
 
-If you previously installed via `plugin: ["swift-agent-skills@git+..."]`, switch to the `skills.paths` config shown above. The TS plugin mechanism has been removed.
+If you previously installed via `plugin: ["swift-agent-skills@git+..."]` or manual `skills.paths` config, switch to the plugin-based install shown above. The old TS plugin mechanism has been removed; the new JS plugin auto-registers the skills path.
 
 ### Syncing skills (maintainers)
 
